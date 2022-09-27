@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10 reused_table_header">
+            <div class="card px-3 pb-3">
+                <div class="card-header card-header-warning">
+                    <div class="d-flex justify-content-between">
+                        <h2 class="mb-0 card-title">Update SubTopic</h2>
+                        <button  mat-raised-button 
+                                (click)="backButton()">Back To Sub Topic</button>
+                    </div>
+                </div>
+                <form #topicForm="ngForm" class="mt-4" (ngSubmit)="updateSubTopic(topicForm.value)">
+                    <mat-form-field class="form-field w-100" appearance="outline">
+                        <mat-label>SubTopic</mat-label>
+                        <input [(ngModel)]="subTopicName" name="subTopicName" type="text" matInput
+                            placeholder="Enter SubTopic">
+                    </mat-form-field>
+
+                    <div>
+
+                        <select class="form-control" name="course" #course="ngModel" [(ngModel)]="topicData">
+                            <option disabled *ngFor="let topic of topicsList" [value]="topic"
+                                [selected]="topic.topicName === topicName">
+                                {{topic.topicName}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="">
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="submit" mat-raised-button color="primary">Update SubTopic</button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

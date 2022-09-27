@@ -1,0 +1,64 @@
+<section class="profile_component">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 reused_table_header">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title mb-0">Update user</h4>
+                    </div>
+
+                    <div class="mt-4">
+                        <form #updateUserForm="ngForm" (ngSubmit)="updateUser(updateUserForm.value)">
+                            <div class="row px-3">
+                                <div class="col-md-6">
+                                    <div>
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Name</mat-label>
+                                            <input [(ngModel)]="log_name" minlength="3" name="name" type="text" matInput
+                                                placeholder="Enter Name" />
+                                        </mat-form-field>
+                                    </div>
+                                    <div>
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input [(ngModel)]="log_email" required #email="ngModel" name="email"
+                                                type="email" matInput readonly placeholder="Enter Email" readonly>
+                                        </mat-form-field>
+                                    </div>
+                                    <div>
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>UserName</mat-label>
+                                            <input minlength="8" [(ngModel)]="log_useName" required #userName="ngModel"
+                                                name="userName" type="text" matInput placeholder="Enter UserName"
+                                                readonly>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div>
+                                        <ng-multiselect-dropdown name="profile" [placeholder]="'Select Profile'"
+                                            [data]="profile" [(ngModel)]="selectedProfileName" [disabled]="disabled"
+                                            [settings]="profileDropdownSettings" (onSelect)="onItemSelect($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div>
+                                        <ng-multiselect-dropdown name="roles" [placeholder]="'Select Role'"
+                                            [data]="roles" [(ngModel)]="selectedItems" [disabled]="disabled"
+                                            [settings]="dropdownSettings" (onSelect)="onItemSelect($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="submit" class="d-block btn w-100" mat-raised-button
+                                            color="primary">Update User</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

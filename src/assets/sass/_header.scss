@@ -1,0 +1,93 @@
+.header_component {
+    background-color: #fff;
+    padding: 10px 15px;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    width: 100%;
+    // margin-bottom: 30px;
+    box-shadow: 0 12px 23px 0 hsl(0deg 0% 44% / 4%);
+    border-bottom: 1px solid #dcdcdc;
+    .search_bar {
+        border: 1px solid rgb(220, 218, 218);
+        border-radius: 25px;
+        width: 370px;
+        display: flex;
+        transition: width 0.4s ease-in-out;
+        &:focus-within{
+            width: 100% !important;
+            border: 1px solid rgb(144 134 241);
+        }
+        input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            background: transparent;
+            outline: none;
+            width: 370px;
+            transition: width 0.4s ease-in-out;
+            border: transparent;
+            &:focus-within{
+                width: 100% !important;
+            }
+        }
+        .icon {
+            padding: 10px;
+            font-size: 17px;
+            cursor: pointer;
+            color: #b3b0b0;
+        }
+    }
+      
+    .userLoginInfo{
+        margin-top: 4px;
+        padding: 9px 36px;
+        letter-spacing: .3px;
+        max-width: 300px;
+        // border: 1px solid #00d09c;
+        border: 1px solid $blue;
+        background-color: #ececf9;
+        font-size: 0.7rem;
+        border-radius: 25px;
+      }
+
+    .profile_img{
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid $blueFade;
+        padding: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        img{
+            height: 50px;
+            border-radius: 50%;
+        }  
+    }
+    
+    .pulse{
+        width: 10px;
+        height: 10px;
+        background-color: $blue;
+        border-radius: 50%;
+        animation: pulse 1s infinite;
+        position: absolute;
+        bottom: 12px;
+        right: -4px;
+        opacity: 0.7;
+    }
+    
+    @keyframes pulse{
+        0% {
+                box-shadow: 0 0 0 6px #c8ebeb;
+        }
+        50% {
+                box-shadow: 0 0 0 10px #c8ebeb;
+        }
+        100% {
+                box-shadow: 0 0 0 12px transparent;
+        }
+    }
+    
+}

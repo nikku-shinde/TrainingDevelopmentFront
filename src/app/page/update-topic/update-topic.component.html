@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10 reused_table_header">
+            <div class="card px-3">
+                <div class="card-header card-header-warning">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="card-title mb-0">Update Topic</h2>
+                        <button mat-raised-button (click)="backButton()">Back To Topic</button>
+                    </div>
+                </div>
+                <form #topicForm="ngForm" (ngSubmit)="updateTopic(topicForm.value)">
+
+                    <div class="pb-3 mt-4">
+                        <mat-form-field class="form-field w-100" appearance="outline">
+                            <mat-label>Topic</mat-label>
+                            <input [(ngModel)]="topicName" name="topicName" type="text" matInput placeholder="Enter Topic">
+                        </mat-form-field>
+    
+                        <!-- <mat-form-field class="form-field" appearance="outline">
+                                <mat-label>Course</mat-label>
+                                <mat-select name="course" [(ngModel)]="course">
+                                    <mat-option disabled *ngFor="let course of coursesList"  [value]="course">
+                                        {{course.courseName}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            -->
+    
+                        <div class="form-group">
+                            <select class="form-control" name="course" #course="ngModel" [(ngModel)]="courseData">
+                                <option disabled *ngFor="let course of coursesList" [value]="course"
+                                    [selected]="course.courseName === courseName">
+                                    {{course.courseName}}
+                                </option>
+                            </select>
+                        </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn " mat-raised-button color="primary">Update Topic</button>
+                        </div>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
